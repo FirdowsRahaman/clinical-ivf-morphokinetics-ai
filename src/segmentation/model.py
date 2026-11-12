@@ -1,5 +1,4 @@
-"""
-Multi-Class Blastocyst Segmentation Architecture (Attention U-Net)
+"""Multi-Class Blastocyst Segmentation Architecture (Attention U-Net)
 Segmenting Zona Pellucida (ZP), Inner Cell Mass (ICM), Trophectoderm (TE), and Blastocoel Cavity.
 Designed for clinical microscopic embryology time-lapse imaging.
 """
@@ -49,8 +48,7 @@ class AttentionGate(nn.Module):
         return x * psi
 
 class EmbryoAttentionUNet(nn.Module):
-    """
-    Attention U-Net tailored for blastocyst morphology segmentation:
+    """Attention U-Net tailored for blastocyst morphology segmentation:
     Classes:
       0: Background
       1: Zona Pellucida (ZP)

@@ -1,5 +1,4 @@
-"""
-Gardner Blastocyst Grading & Viability Assessment System
+"""Gardner Blastocyst Grading & Viability Assessment System
 Implements the standard Gardner & Schoolcraft clinical staging criteria:
 - Expansion Grade (1 to 6)
 - Inner Cell Mass (ICM) Quality (A, B, C)
@@ -17,8 +16,7 @@ class BlastocystMorphology(BaseModel):
     te_continuity_ratio: float = Field(..., ge=0.0, le=1.0, description="Epithelial continuity around cavity")
 
 class GardnerClassifier:
-    """
-    Evaluates blastocyst morphological features and outputs standard clinical Gardner grade.
+    """Evaluates blastocyst morphological features and outputs standard clinical Gardner grade.
     """
     @staticmethod
     def classify_icm(cell_count: int, compaction: float) -> str:

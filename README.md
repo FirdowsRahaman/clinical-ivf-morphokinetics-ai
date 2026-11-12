@@ -1,4 +1,4 @@
-# Clinical IVF Morphokinetics & Reproductive AI Platform 🔬
+# Clinical IVF Morphokinetics & Reproductive AI Platform 
 
 <p align="left">
   <img src="https://img.shields.io/badge/Domain-Clinical%20IVF%20%26%20Embryology-06B6D4?style=flat-square" alt="Domain">
@@ -12,18 +12,18 @@ A production-grade, clinical computer vision platform for non-invasive **blastoc
 
 ---
 
-## 📑 Table of Contents
-- [Clinical Background & Objectives](#-clinical-background--objectives)
-- [System Architecture](#-system-architecture)
-- [Key Capabilities](#-key-capabilities)
-- [EU AI Act & Regulatory Governance](#-eu-ai-act--regulatory-governance)
-- [Quick Start](#-quick-start)
-- [Architecture Decision Records (ADRs)](#-architecture-decision-records)
-- [License](#-license)
+## Table of Contents
+- [Clinical Background & Objectives](#clinical-background--objectives)
+- [System Architecture](#system-architecture)
+- [Key Capabilities](#key-capabilities)
+- [EU AI Act & Regulatory Governance](#eu-ai-act--regulatory-governance)
+- [Quick Start](#quick-start)
+- [Architecture Decision Records (ADRs)](#architecture-decision-records)
+- [License](#license)
 
 ---
 
-## 🔬 Clinical Background & Objectives
+## Clinical Background & Objectives
 
 In In-Vitro Fertilization (IVF) cycles, selecting the embryo with the highest developmental competence for single embryo transfer (SET) is critical to achieving successful live births while avoiding multiple pregnancies.
 
@@ -34,7 +34,7 @@ Traditional manual grading under an optical microscope suffers from **high inter
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```
 Time-Lapse Ingestion (DICOM / TIFF)
@@ -62,7 +62,7 @@ Time-Lapse Ingestion (DICOM / TIFF)
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 1. **Clone & Setup**:
    ```bash
@@ -78,12 +78,12 @@ Time-Lapse Ingestion (DICOM / TIFF)
 
 ---
 
-## 🏛️ EU AI Act & Regulatory Governance
+## EU AI Act & Regulatory Governance
 - Full technical documentation available in [**`EU_AI_ACT_TECHNICAL_DOCUMENTATION.md`**](EU_AI_ACT_TECHNICAL_DOCUMENTATION.md).
 - Architectural decisions documented in [**`docs/adr/`**](docs/adr/).
 - Strict compliance with Human Oversight (Article 14) and Clinical Cybersecurity (Article 15).
 
 ---
 
-## 📄 License
+## License
 This project is licensed under the MIT License.

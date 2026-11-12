@@ -1,5 +1,4 @@
-"""
-End-to-End Clinical IVF Diagnostic Pipeline Demo
+"""End-to-End Clinical IVF Diagnostic Pipeline Demo
 Simulates blastocyst image ingestion, neural segmentation, Gardner grading,
 and generates a structured clinical report conforming to EU AI Act High-Risk standards.
 """
@@ -13,9 +12,9 @@ from src.grading.gardner import BlastocystMorphology, GardnerClassifier
 
 def run_clinical_ivf_diagnostic_pipeline():
     print("="*75)
-    print("🔬 Clinical IVF Diagnostic & Morphokinetics AI Pipeline")
-    print("   Standard: Gardner Staging & ESHRE Vienna Consensus Protocol")
-    print("   Compliance: EU AI Act High-Risk (Class IIa/IIb) • HIPAA & GDPR Article 9")
+    print("Clinical IVF Diagnostic & Morphokinetics AI Pipeline")
+    print("Standard: Gardner Staging & ESHRE Vienna Consensus Protocol")
+    print("Compliance: EU AI Act High-Risk (Class IIa/IIb) • HIPAA & GDPR Article 9")
     print("="*75)
 
     # 1. Initialize Neural Segmentation Model
@@ -28,7 +27,7 @@ def run_clinical_ivf_diagnostic_pipeline():
     with torch.no_grad():
         logits = model(dummy_input)
         preds = torch.argmax(logits, dim=1)
-    print(f"   ✓ Multi-class mask generated: Shape {preds.shape} (Classes: Background, ZP, ICM, TE, Blastocoel)")
+    print(f"Multi-class mask generated: Shape {preds.shape} (Classes: Background, ZP, ICM, TE, Blastocoel)")
 
     # 2. Morphokinetic Milestone Assessment
     print("\n2. Evaluating Time-Lapse Developmental Kinetics (Hours post-ICSI)...")
@@ -42,9 +41,9 @@ def run_clinical_ivf_diagnostic_pipeline():
         t_b=108.5
     )
     kinetics_result = MorphokineticKineticsEvaluator.evaluate(timings)
-    print(f"   ✓ Second Cell Cycle (cc2): {kinetics_result['cell_cycle_2_duration_hours']}h (Optimal: 5-12h)")
-    print(f"   ✓ Cleavage Synchrony (s2): {kinetics_result['synchrony_s2_hours']}h (Optimal: <1h)")
-    print(f"   ✓ Morphokinetic Prognosis: {kinetics_result['morphokinetic_tier']}")
+    print(f"Second Cell Cycle (cc2): {kinetics_result['cell_cycle_2_duration_hours']}h (Optimal: 5-12h)")
+    print(f"Cleavage Synchrony (s2): {kinetics_result['synchrony_s2_hours']}h (Optimal: <1h)")
+    print(f"Morphokinetic Prognosis: {kinetics_result['morphokinetic_tier']}")
 
     # 3. Morphological Staging & Gardner Grading
     print("\n3. Classifying Gardner Blastocyst Morphology...")
@@ -56,9 +55,9 @@ def run_clinical_ivf_diagnostic_pipeline():
         te_continuity_ratio=0.92
     )
     grading_result = GardnerClassifier.evaluate(morphology)
-    print(f"   ✓ Standard Gardner Grade: {grading_result['gardner_grade']}")
-    print(f"   ✓ Estimated Implantation Potential: {grading_result['estimated_implantation_potential']*100:.1f}%")
-    print(f"   ✓ Transfer Priority: {grading_result['transfer_priority']}")
+    print(f"Standard Gardner Grade: {grading_result['gardner_grade']}")
+    print(f"Estimated Implantation Potential: {grading_result['estimated_implantation_potential']*100:.1f}%")
+    print(f"Transfer Priority: {grading_result['transfer_priority']}")
 
     # 4. Generate Audit-Ready Clinical Report
     report = {
@@ -73,7 +72,7 @@ def run_clinical_ivf_diagnostic_pipeline():
 
     print("\n4. Final Structured Clinical Diagnostic Report:")
     print(json.dumps(report, indent=2))
-    print("\n✅ Diagnostic trajectory completed in accordance with EU AI Act Article 14 (Human Oversight Required).")
+    print("\n Diagnostic trajectory completed in accordance with EU AI Act Article 14 (Human Oversight Required).")
 
 if __name__ == "__main__":
     run_clinical_ivf_diagnostic_pipeline()

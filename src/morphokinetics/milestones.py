@@ -1,5 +1,4 @@
-"""
-Embryo Morphokinetics Milestone & Timing Kinetics Calculator
+"""Embryo Morphokinetics Milestone & Timing Kinetics Calculator
 Calculates time-lapse kinetic parameters (t2, t3, t4, t8, tSB, tB, cc2, s2)
 conforming to international ESHRE & Vienna Consensus reproductive biology standards.
 """
@@ -17,8 +16,7 @@ class MorphokineticTimings(BaseModel):
     t_b: float = Field(..., description="Hours to full blastocyst")
 
 class MorphokineticKineticsEvaluator:
-    """
-    Evaluates developmental cell division intervals based on standard time-lapse microscopy.
+    """Evaluates developmental cell division intervals based on standard time-lapse microscopy.
     Primary prognostic indicators:
     - cc2 = t3 - t2 (duration of second cell cycle, optimal: 5 - 12 hours)
     - s2  = t4 - t3 (synchrony of division from 2 to 4 cells, optimal: 0 - 0.75 hours)
