@@ -4,8 +4,8 @@ Designed for clinical microscopic embryology time-lapse imaging.
 """
 
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
+from torch import nn
+
 
 class ConvBlock(nn.Module):
     def __init__(self, in_channels: int, out_channels: int):

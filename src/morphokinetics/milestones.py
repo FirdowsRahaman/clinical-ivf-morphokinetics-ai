@@ -3,8 +3,10 @@ Calculates time-lapse kinetic parameters (t2, t3, t4, t8, tSB, tB, cc2, s2)
 conforming to international ESHRE & Vienna Consensus reproductive biology standards.
 """
 
-from typing import Dict, Any, List
+from typing import Any
+
 from pydantic import BaseModel, Field
+
 
 class MorphokineticTimings(BaseModel):
     t_pb: float = Field(..., description="Hours to polar body extrusion")
@@ -24,7 +26,7 @@ class MorphokineticKineticsEvaluator:
     """
     
     @staticmethod
-    def evaluate(timings: MorphokineticTimings) -> Dict[str, Any]:
+    def evaluate(timings: MorphokineticTimings) -> dict[str, Any]:
         cc2 = timings.t_3 - timings.t_2
         s2 = timings.t_4 - timings.t_3
         blastulation_duration = timings.t_b - timings.t_sb

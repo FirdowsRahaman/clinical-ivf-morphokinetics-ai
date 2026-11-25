@@ -4,11 +4,16 @@ and generates a structured clinical report conforming to EU AI Act High-Risk sta
 """
 
 import json
+
 import torch
-import numpy as np
-from src.segmentation.model import EmbryoAttentionUNet
-from src.morphokinetics.milestones import MorphokineticTimings, MorphokineticKineticsEvaluator
+
 from src.grading.gardner import BlastocystMorphology, GardnerClassifier
+from src.morphokinetics.milestones import (
+    MorphokineticKineticsEvaluator,
+    MorphokineticTimings,
+)
+from src.segmentation.model import EmbryoAttentionUNet
+
 
 def run_clinical_ivf_diagnostic_pipeline():
     print("="*75)

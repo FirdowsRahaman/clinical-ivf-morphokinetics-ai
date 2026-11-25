@@ -5,8 +5,10 @@ Implements the standard Gardner & Schoolcraft clinical staging criteria:
 - Trophectoderm (TE) Quality (A, B, C)
 """
 
-from typing import Dict, Any, Tuple
+from typing import Any
+
 from pydantic import BaseModel, Field
+
 
 class BlastocystMorphology(BaseModel):
     expansion_grade: int = Field(..., ge=1, le=6, description="1: Early, 2: Blastocyst, 3: Full, 4: Expanded, 5: Hatching, 6: Hatched")
@@ -37,7 +39,7 @@ class GardnerClassifier:
             return "C"  # Very few large cells
 
     @classmethod
-    def evaluate(cls, morphology: BlastocystMorphology) -> Dict[str, Any]:
+    def evaluate(cls, morphology: BlastocystMorphology) -> dict[str, Any]:
         exp = morphology.expansion_grade
         icm = cls.classify_icm(morphology.icm_cell_count, morphology.icm_compaction_ratio)
         te = cls.classify_te(morphology.te_cell_count, morphology.te_continuity_ratio)
