@@ -30,4 +30,4 @@ jobs:
 
       - name: Execute Pipeline Smoke Test
         run: |
-          python demo/pipeline.py
+          PYTHONPATH=. python demo/pipeline.py
